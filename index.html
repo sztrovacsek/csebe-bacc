@@ -333,7 +333,6 @@
 <nav>
   <div class="nav-logo">Csébé<span> · Érettségire Fel!</span></div>
   <div class="nav-links">
-    <a href="#our-story">Kik vagyunk</a>
     <a href="what-is-it.html" target="_blank">Mi ez</a>
     <a href="app.html" target="_blank">Mutasd az appot</a>
     <a href="#" class="nav-cta">Csatlakozz</a>
@@ -343,39 +342,132 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Csíkszereda · Románia</div>
-    <h1 class="hero-title">Az érettségi<br><em>mindenkié</em><br>lehet.</h1>
-    <p class="hero-body">A Csébé közösség diákjainak épített ingyenes felkészítő alkalmazás — mert a tanuláshoz szükséges eszközöknek nem kellene luxusnak lenniük.</p>
-    <div class="hero-actions">
-      <a href="#" class="btn-primary">Kezdjük el →</a>
-      <a href="#tamogatok" class="btn-secondary">Támogass minket</a>
-    </div>
+    <!-- AUDIENCE SECTION -->
+    <section class="audience-section" id="diakok">
+      <div class="section-label">Kinek szól?</div>
+      <h2 class="section-title">Az alkalmazás mindenkinek épül</h2>
+      <p class="section-sub">Akár diák vagy, szülő, tanár vagy épp egy szimpatizáns — van helyed ebben a közösségben.</p>
+
+      <div class="audience-tabs" role="tablist">
+        <button class="audience-tab active" onclick="switchTab('csebe', this)" role="tab">Csébé</button>
+        <button class="audience-tab" onclick="switchTab('diak', this)" role="tab">Diákok</button>
+        <button class="audience-tab" onclick="switchTab('szulo', this)" role="tab" id="szulok">Szülők</button>
+        <button class="audience-tab" onclick="switchTab('tanar', this)" role="tab" id="tanarok">Tanárok</button>
+        <button class="audience-tab" onclick="switchTab('tamogato', this)" role="tab" id="tamogatok">Támogatók</button>
+      </div>
+
+      <div id="panel-diak" class="audience-panel active">
+        <div class="panel-visual">
+          <div class="panel-icon-wrap">
+            <i class="ti ti-school" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="panel-content">
+          <span class="panel-tag">14–18 éveseknek</span>
+          <h3 class="panel-title">Felkészülés, saját tempódban.</h3>
+          <p class="panel-body">Nem kell drága különóra. Az alkalmazás kismértékű napi gyakorlással — akár 15 perccel is — segít az érettségi anyagát fokozatosan elsajátítani. Egyedül és csoportban is használható.</p>
+          <ul class="panel-features">
+            <li>Valódi érettségi feladatok és megoldások</li>
+            <li>Napi célok és haladáskövetés</li>
+            <li>Kérdezz a közösségben — társaktól és tanároktól</li>
+            <li>Offline is működik, gyenge interneten is</li>
+            <li>Magyar felület, román szakszókinccsel</li>
+          </ul>
+          <a href="#" class="btn-primary">Regisztrálj ingyen →</a>
+        </div>
+      </div>
+
+      <div id="panel-szulo" class="audience-panel">
+        <div class="panel-visual">
+          <div class="panel-icon-wrap">
+            <i class="ti ti-heart" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="panel-content">
+          <span class="panel-tag">Szülőknek</span>
+          <h3 class="panel-title">Legyen képben, amit gyermeke csinál.</h3>
+          <p class="panel-body">Átlátható és egyszerű összegzőt kap arról, hogy gyermeke mennyit tanult és miben fejlődik — felesleges technikai bonyolultság nélkül.</p>
+          <ul class="panel-features">
+            <li>Heti haladásösszegző egyszerű nyelven</li>
+            <li>Értesítés, ha a gyerek sorozatban tanul</li>
+            <li>Biztonságos, hirdetésmentes környezet</li>
+            <li>Nincs szükség okostelefonra — bármilyen böngészőből használható</li>
+          </ul>
+          <a href="#" class="btn-primary">Tudj meg többet →</a>
+        </div>
+      </div>
+
+      <div id="panel-tanar" class="audience-panel">
+        <div class="panel-visual">
+          <div class="panel-icon-wrap">
+            <i class="ti ti-books" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="panel-content">
+          <span class="panel-tag">Tanároknak és önkénteseknek</span>
+          <h3 class="panel-title">Tanítsd azt, ami számít — mi elvégezzük a többit.</h3>
+          <p class="panel-body">Csatlakozz önkéntes mentoraink köréhez. Egyszerű irányítópulttal láthatod, melyik diák melyik témában szorul segítségre, és pontosan arra fókuszálhatsz.</p>
+          <ul class="panel-features">
+            <li>Diák-haladás áttekintő egy képernyőn</li>
+            <li>Feladatok kiosztása személyre szabottan</li>
+            <li>Hibás tartalmak jelzése — te tartod naprakészen</li>
+            <li>Rugalmas, aszinkron mentorálás</li>
+            <li>Különösen keresünk: matematika, román irodalom, történelem</li>
+          </ul>
+          <a href="#" class="btn-primary">Legyek mentor →</a>
+        </div>
+      </div>
+
+      <div id="panel-tamogato" class="audience-panel">
+        <div class="panel-visual">
+          <div class="panel-icon-wrap">
+            <i class="ti ti-currency-euro" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="panel-content">
+          <span class="panel-tag">Támogatóknak</span>
+          <h3 class="panel-title">Befektetés, amit évek múlva is látni fogsz.</h3>
+          <p class="panel-body">Az alkalmazás fenntartása, a tartalmak fejlesztése és a közösség bővítése anyagi támogatást igényel. Minden forint és lej közvetlenül a diákok felkészülésébe kerül.</p>
+          <ul class="panel-features">
+            <li>Átlátható felhasználás — éves jelentéssel</li>
+            <li>Visszajelzési lehetőség a fejlesztési irányokhoz</li>
+            <li>Szervezetek számára: partnerség és láthatóság</li>
+            <li>Egyszeri és rendszeres adomány is lehetséges</li>
+          </ul>
+          <a href="#" class="btn-primary">Támogatok →</a>
+        </div>
+      </div>
+
+      <div id="panel-csebe" class="audience-panel">
+        <div class="panel-visual">
+          <div class="panel-icon-wrap">
+            <i class="ti ti-heart-handshake" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="panel-content">
+          <span class="panel-tag">Csébé közösségnek</span>
+          <h3 class="panel-title">Hanna üzenete neked.</h3>
+          <p class="panel-body">Kedves Csébé közösség gyerekei, szeretném, ha tudnátok: megvannak bennetek a készségek és a kompetenciák, amikkel elérhetitek a céljaitokat. Értékes emberek vagytok, és itt vagyok, hogy segítsek nektek átadni az iskolai vizsgákat a középsulis év végén és a gimnáziumi érettségi végén.</p>
+          <ul class="panel-features">
+            <li>Hitel bennetek van — csak támogatást kell hozzá adnunk.</li>
+            <li>Nem vagytok egyedül a felkészülésben.</li>
+            <li>Megbízható, türelmes segítséget kaptok a legfontosabb tantárgyakhoz.</li>
+            <li>Ha az álmotok az egyetem, együtt megteremtjük hozzá az utat.</li>
+          </ul>
+          <a href="#" class="btn-primary">Ossz meg egy álmot →</a>
+        </div>
+      </div>
+    </section>
   </div>
   <div class="hero-right">
     <div class="deco-circle" style="width:320px;height:320px;top:-60px;right:-60px;"></div>
     <div class="deco-circle" style="width:200px;height:200px;bottom:40px;left:-40px;"></div>
+    <h1 class="hero-title"><em>Az érettségi mindenkié</em>lehet</h1>
+    <p class="hero-body">A Csébé közösség diákjainak épített ingyenes felkészítő alkalmazás — mert a tanuláshoz szükséges eszközöknek nem kellene luxusnak lenniük.</p>
     <div class="hero-illustration">
       <div class="hero-quote-block">
         <p class="hero-quote">"Nem a tehetség hiányzott soha — csak a lehetőség."</p>
         <p class="hero-quote-sub">CSÉBÉ KÖZÖSSÉG · CSÍKSZEREDA</p>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-cell">
-          <span class="stat-num">50+</span>
-          <span class="stat-label">Diák a közösségből</span>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Tantárgy az első verzióban</span>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-num">2</span>
-          <span class="stat-label">Nyelvű felület</span>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-num">0 lej</span>
-          <span class="stat-label">Mindig ingyenes</span>
-        </div>
       </div>
     </div>
   </div>
@@ -391,122 +483,7 @@
   <span class="lang-label" style="margin-left:auto; font-style:italic; text-transform:none; letter-spacing:0;">Minden tartalom elérhető offline is.</span>
 </div>
 
-<!-- AUDIENCE SECTION -->
-<section class="audience-section" id="diakok">
-  <div class="section-label">Kinek szól?</div>
-  <h2 class="section-title">Az alkalmazás mindenkinek épül.</h2>
-  <p class="section-sub">Akár diák vagy, szülő, tanár vagy épp egy szimpatizáns — van helyed ebben a közösségben.</p>
 
-  <div class="audience-tabs" role="tablist">
-    <button class="audience-tab active" onclick="switchTab('csebe', this)" role="tab">Csébé</button>
-    <button class="audience-tab" onclick="switchTab('diak', this)" role="tab">Diákok</button>
-    <button class="audience-tab" onclick="switchTab('szulo', this)" role="tab" id="szulok">Szülők</button>
-    <button class="audience-tab" onclick="switchTab('tanar', this)" role="tab" id="tanarok">Tanárok</button>
-    <button class="audience-tab" onclick="switchTab('tamogato', this)" role="tab" id="tamogatok">Támogatók</button>
-  </div>
-
-  <div id="panel-diak" class="audience-panel active">
-    <div class="panel-visual">
-      <div class="panel-icon-wrap">
-        <i class="ti ti-school" aria-hidden="true"></i>
-      </div>
-    </div>
-    <div class="panel-content">
-      <span class="panel-tag">14–18 éveseknek</span>
-      <h3 class="panel-title">Felkészülés, saját tempódban.</h3>
-      <p class="panel-body">Nem kell drága különóra. Az alkalmazás kismértékű napi gyakorlással — akár 15 perccel is — segít az érettségi anyagát fokozatosan elsajátítani. Egyedül és csoportban is használható.</p>
-      <ul class="panel-features">
-        <li>Valódi érettségi feladatok és megoldások</li>
-        <li>Napi célok és haladáskövetés</li>
-        <li>Kérdezz a közösségben — társaktól és tanároktól</li>
-        <li>Offline is működik, gyenge interneten is</li>
-        <li>Magyar felület, román szakszókinccsel</li>
-      </ul>
-      <a href="#" class="btn-primary">Regisztrálj ingyen →</a>
-    </div>
-  </div>
-
-  <div id="panel-szulo" class="audience-panel">
-    <div class="panel-visual">
-      <div class="panel-icon-wrap">
-        <i class="ti ti-heart" aria-hidden="true"></i>
-      </div>
-    </div>
-    <div class="panel-content">
-      <span class="panel-tag">Szülőknek</span>
-      <h3 class="panel-title">Legyen képben, amit gyermeke csinál.</h3>
-      <p class="panel-body">Átlátható és egyszerű összegzőt kap arról, hogy gyermeke mennyit tanult és miben fejlődik — felesleges technikai bonyolultság nélkül.</p>
-      <ul class="panel-features">
-        <li>Heti haladásösszegző egyszerű nyelven</li>
-        <li>Értesítés, ha a gyerek sorozatban tanul</li>
-        <li>Biztonságos, hirdetésmentes környezet</li>
-        <li>Nincs szükség okostelefonra — bármilyen böngészőből használható</li>
-      </ul>
-      <a href="#" class="btn-primary">Tudj meg többet →</a>
-    </div>
-  </div>
-
-  <div id="panel-tanar" class="audience-panel">
-    <div class="panel-visual">
-      <div class="panel-icon-wrap">
-        <i class="ti ti-books" aria-hidden="true"></i>
-      </div>
-    </div>
-    <div class="panel-content">
-      <span class="panel-tag">Tanároknak és önkénteseknek</span>
-      <h3 class="panel-title">Tanítsd azt, ami számít — mi elvégezzük a többit.</h3>
-      <p class="panel-body">Csatlakozz önkéntes mentoraink köréhez. Egyszerű irányítópulttal láthatod, melyik diák melyik témában szorul segítségre, és pontosan arra fókuszálhatsz.</p>
-      <ul class="panel-features">
-        <li>Diák-haladás áttekintő egy képernyőn</li>
-        <li>Feladatok kiosztása személyre szabottan</li>
-        <li>Hibás tartalmak jelzése — te tartod naprakészen</li>
-        <li>Rugalmas, aszinkron mentorálás</li>
-        <li>Különösen keresünk: matematika, román irodalom, történelem</li>
-      </ul>
-      <a href="#" class="btn-primary">Legyek mentor →</a>
-    </div>
-  </div>
-
-  <div id="panel-tamogato" class="audience-panel">
-    <div class="panel-visual">
-      <div class="panel-icon-wrap">
-        <i class="ti ti-currency-euro" aria-hidden="true"></i>
-      </div>
-    </div>
-    <div class="panel-content">
-      <span class="panel-tag">Támogatóknak</span>
-      <h3 class="panel-title">Befektetés, amit évek múlva is látni fogsz.</h3>
-      <p class="panel-body">Az alkalmazás fenntartása, a tartalmak fejlesztése és a közösség bővítése anyagi támogatást igényel. Minden forint és lej közvetlenül a diákok felkészülésébe kerül.</p>
-      <ul class="panel-features">
-        <li>Átlátható felhasználás — éves jelentéssel</li>
-        <li>Visszajelzési lehetőség a fejlesztési irányokhoz</li>
-        <li>Szervezetek számára: partnerség és láthatóság</li>
-        <li>Egyszeri és rendszeres adomány is lehetséges</li>
-      </ul>
-      <a href="#" class="btn-primary">Támogatok →</a>
-    </div>
-  </div>
-
-  <div id="panel-csebe" class="audience-panel">
-    <div class="panel-visual">
-      <div class="panel-icon-wrap">
-        <i class="ti ti-heart-handshake" aria-hidden="true"></i>
-      </div>
-    </div>
-    <div class="panel-content">
-      <span class="panel-tag">Csébé közösségnek</span>
-      <h3 class="panel-title">Hanna üzenete neked.</h3>
-      <p class="panel-body">Kedves Csébé közösség gyerekei, szeretném, ha tudnátok: megvannak bennetek a készségek és a kompetenciák, amikkel elérhetitek a céljaitokat. Értékes emberek vagytok, és itt vagyok, hogy segítsek nektek átadni az iskolai vizsgákat a középsulis év végén és a gimnáziumi érettségi végén.</p>
-      <ul class="panel-features">
-        <li>Hitel bennetek van — csak támogatást kell hozzá adnunk.</li>
-        <li>Nem vagytok egyedül a felkészülésben.</li>
-        <li>Megbízható, türelmes segítséget kaptok a legfontosabb tantárgyakhoz.</li>
-        <li>Ha az álmotok az egyetem, együtt megteremtjük hozzá az utat.</li>
-      </ul>
-      <a href="#" class="btn-primary">Ossz meg egy álmot →</a>
-    </div>
-  </div>
-</section>
 
 <!-- CTA -->
 <section class="cta-section">
