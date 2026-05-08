@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi ez? · Csébé · Érettségire Fel!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber: #C8621A;
+      --amber-light: #F2A65A;
+      --amber-pale: #FDF3E7;
+      --earth: #3D2B1F;
+      --earth-mid: #6B4535;
+      --cream: #FAF6EE;
+      --sage: #4A6741;
+      --sage-light: #D4E6CF;
+      --ink: #1C1410;
+      --muted: #7A6155;
+    }
+
+    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,246,238,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200,98,26,0.15);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.35rem; color: var(--amber); letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--earth); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; color: var(--earth-mid); text-decoration: none; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-cta { background: var(--amber); color: white !important; padding: 0.5rem 1.2rem; border-radius: 2px; }
+    .nav-cta:hover { background: var(--earth) !important; }
+
+    /* HERO */
+    .page-hero {
+      min-height: 50vh; display: flex; flex-direction: column;
+      position: relative; overflow: hidden; background: var(--earth);
+      padding: 5rem 3.5rem; justify-content: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+      color: var(--amber-light); text-transform: uppercase; margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--amber-light); }
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 900; line-height: 1.15;
+      color: white; margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .page-sub {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.1rem; line-height: 1.7;
+      color: rgba(255,255,255,0.7); max-width: 620px;
+    }
+
+    /* SECTION */
+    .section-label {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+      color: var(--amber); text-transform: uppercase; margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--amber); }
+    .section-title {
+      font-family: 'Playfair Display', serif; font-size: 2.2rem;
+      font-weight: 900; color: var(--earth); margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      font-family: 'Source Serif 4', serif; font-size: 1rem;
+      color: var(--muted); line-height: 1.7; max-width: 540px; margin-bottom: 3rem;
+    }
+
+    /* FEATURES */
+    .features-section { padding: 5rem 3.5rem; background: var(--earth); }
+    .features-section .section-title { color: white; }
+    .features-section .section-sub { color: rgba(255,255,255,0.55); }
+    .features-section .section-label { color: var(--amber-light); }
+    .features-section .section-label::before { background: var(--amber-light); }
+
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+    .feature-card {
+      background: rgba(61,43,31,0.7); padding: 2rem 1.75rem;
+      transition: background 0.2s;
+    }
+    .feature-card:hover { background: rgba(200,98,26,0.15); }
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: 2px;
+      background: rgba(200,98,26,0.2); border: 1px solid rgba(200,98,26,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; color: var(--amber-light); margin-bottom: 1.25rem;
+    }
+    .feature-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+    .feature-body { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* HOW IT WORKS */
+    .how-section { padding: 5rem 3.5rem; background: var(--amber-pale); }
+    .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin-top: 2.5rem; }
+    .how-step { padding: 2rem 1.5rem 2rem 0; position: relative; }
+    .how-step:not(:last-child)::after {
+      content: ''; position: absolute; top: 2.7rem; right: 0;
+      width: 1px; height: 60%; background: rgba(61,43,31,0.15);
+    }
+    .step-num {
+      font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900;
+      color: rgba(200,98,26,0.18); line-height: 1; margin-bottom: 0.75rem;
+    }
+    .step-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--earth); margin-bottom: 0.5rem; }
+    .step-body { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+    /* TESTIMONIAL */
+    .testimonial-section {
+      padding: 5rem 3.5rem; background: var(--cream);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .testimonial-big {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.45;
+      color: var(--earth); padding-left: 2rem;
+      border-left: 3px solid var(--amber);
+    }
+    .testimonial-attr { margin-top: 1.25rem; font-size: 0.82rem; color: var(--muted); letter-spacing: 0.05em; padding-left: 2rem; }
+    .impact-numbers { display: flex; flex-direction: column; gap: 0; }
+    .impact-row {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 1.5rem; align-items: center; padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(61,43,31,0.1);
+    }
+    .impact-row:first-child { border-top: 1px solid rgba(61,43,31,0.1); }
+    .impact-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--amber); min-width: 80px; }
+    .impact-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); padding: 2.5rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.1rem; color: var(--amber); }
+    .footer-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.25rem; letter-spacing: 0.04em; }
+    .footer-links { display: flex; gap: 1.75rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-location { font-size: 0.75rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .page-hero { padding: 3rem 1.5rem; }
+      .features-section, .how-section, .testimonial-section { padding: 3rem 1.5rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr 1fr; }
+      .testimonial-section { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      nav { padding: 0.9rem 1rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Csébé<span> · Érettségire Fel!</span></div>
+  <div class="nav-links">
+    <a href="index.html">Vissza a főoldalra</a>
+    <a href="#" class="nav-cta">Csatlakozz</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1 class="page-title">Mi is ez az egész</h1>
+  <p class="page-sub">Ezt a projektet 2026 májusában indította Köllő Hanna, az Csíkszeredai Csébé közösség önkéntese.</p>
+  <p class="page-sub">A célunk az, hogy adjunk a Csébé közösségben résztvevő gyerekek kezébe ingyenes, könnyen kezelhető és hatékony eszközöket ahhoz hogy sikeresen vegyék az iskolai akadályokat és felkészülhessenek a nyolcadik osztály végén esedékes képességvizsgára valamint négy évvel később az érettségire.</p>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="section-label">Funkciók</div>
+  <h2 class="section-title">Komolyan vettük a feltételeket</h2>
+  <p class="section-sub" style="margin-bottom:2.5rem;">Az alkalmazást nem általánosságban terveztük — hanem konkrétan a csíkszeredai valósághoz.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ti ti-wifi-off" aria-hidden="true"></i></div>
+      <div class="feature-title">Offline-first tervezés</div>
+      <p class="feature-body">Drága adatforgalom és gyenge jel esetén is teljes értékűen működik. Tananyagok előre letölthetők.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ti ti-target" aria-hidden="true"></i></div>
+      <div class="feature-title">Valódi érettségi formátum</div>
+      <p class="feature-body">A feladatok az oktatási minisztérium korábbi vizsgasorain alapulnak — pontosan az kerül bele, ami számít.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ti ti-flame" aria-hidden="true"></i></div>
+      <div class="feature-title">Motiváló haladáskövetés</div>
+      <p class="feature-body">Sorozatok, közösségi célok, és az erőfeszítés elismerése — nem csak az eredmény, a kitartás is számít.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+      <div class="feature-title">Csoportos tanulás</div>
+      <p class="feature-body">Láthatod, ki tanul épp. Közös csoportcélok, kérdezős fórum, mentori visszajelzés.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ti ti-device-mobile" aria-hidden="true"></i></div>
+      <div class="feature-title">Bármilyen eszközön</div>
+      <p class="feature-body">Progresszív webalkalmazás — nem kell letölteni. Olcsó Android telefonokon is gond nélkül fut.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ti ti-lock" aria-hidden="true"></i></div>
+      <div class="feature-title">Privát és biztonságos</div>
+      <p class="feature-body">Nincs hirdetés, nincs adatértékesítés. A diákok eredményei alapértelmezetten privátok.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-label">Hogyan működik?</div>
+  <h2 class="section-title">Négy lépés az érettségiig.</h2>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Regisztrálj</div>
+      <p class="step-body">E-mail-cím vagy telefonszám elég. Kevesebb mint egy perc, semmi felesleges.</p>
+    </div>
+    <div class="how-step" style="padding-left:1.5rem;">
+      <div class="step-num">02</div>
+      <div class="step-title">Válassz tantárgyat</div>
+      <p class="step-body">Matematika, román, magyar vagy történelem — attól, amit a legjobban kell erősítened.</p>
+    </div>
+    <div class="how-step" style="padding-left:1.5rem;">
+      <div class="step-num">03</div>
+      <div class="step-title">Tanulj naponta</div>
+      <p class="step-body">Napi 15 perc, kis lépésekben. Az alkalmazás emlékeztet, ösztönöz, és számon tartja a haladásodat.</p>
+    </div>
+    <div class="how-step" style="padding-left:1.5rem;">
+      <div class="step-num">04</div>
+      <div class="step-title">Menj és tedd le</div>
+      <p class="step-body">Az érettségi vizsgán már ismerős lesz minden típusfeladat. Nem ismeretlen terepre mégy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL / IMPACT -->
+<section class="testimonial-section">
+  <div>
+    <p class="testimonial-big">"Ezeknek a gyerekeknek nem akadályok kellenek kevesebb — eszközök kellenek több."</p>
+    <p class="testimonial-attr">— Csébé közösségi aktivista, Csíkszereda</p>
+  </div>
+  <div class="impact-numbers">
+    <div class="impact-row">
+      <div class="impact-num">12</div>
+      <div class="impact-desc">diák az első körben, akik hozzáférnek ingyenes felkészítőhöz</div>
+    </div>
+    <div class="impact-row">
+      <div class="impact-num">3×</div>
+      <div class="impact-desc">több gyakorlófeladathoz jutnak a hasonló helyzetű diákok</div>
+    </div>
+    <div class="impact-row">
+      <div class="impact-num">500</div>
+      <div class="impact-desc">érettségire készülő csíkszeredai diák számára elérhető tananyag - ha segítesz nekünk, akár ingyenesen</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Csébé · Érettségire Fel!</div>
+    <div class="footer-tagline">Ingyenes érettségi-felkészítő a csíkszeredai roma közösség számára</div>
+  </div>
+  <div>
+    <div class="footer-links">
+      <a href="index.html">Főoldal</a>
+      <a href="#">Kapcsolat</a>
+    </div>
+  </div>
+  <div style="text-align:right;">
+    <div class="footer-location">Csíkszereda · Miercurea Ciuc</div>
+    <div class="footer-location" style="margin-top:0.25rem;">Erdély · Románia</div>
+  </div>
+</footer>
+
+</body>
+</html>
