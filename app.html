@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Az App · Csébé · Érettségire Fel!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber: #C8621A;
+      --amber-light: #F2A65A;
+      --amber-pale: #FDF3E7;
+      --earth: #3D2B1F;
+      --earth-mid: #6B4535;
+      --cream: #FAF6EE;
+      --sage: #4A6741;
+      --sage-light: #D4E6CF;
+      --ink: #1C1410;
+      --muted: #7A6155;
+    }
+
+    body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,246,238,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200,98,26,0.15);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.35rem; color: var(--amber); letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--earth); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; color: var(--earth-mid); text-decoration: none; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-cta { background: var(--amber); color: white !important; padding: 0.5rem 1.2rem; border-radius: 2px; }
+    .nav-cta:hover { background: var(--earth) !important; }
+
+    /* COMING SOON */
+    .coming-soon-section {
+      min-height: 80vh; display: flex; flex-direction: column;
+      position: relative; overflow: hidden; background: var(--earth);
+      padding: 5rem 3.5rem; justify-content: center; align-items: center;
+      text-align: center;
+    }
+    .coming-soon-icon {
+      width: 120px; height: 120px; border-radius: 50%;
+      background: rgba(242,166,90,0.15); border: 2px solid rgba(242,166,90,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: var(--amber-light); margin-bottom: 2rem;
+    }
+    .coming-soon-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900; line-height: 1.1;
+      color: white; margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .coming-soon-subtitle {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.2rem; line-height: 1.6;
+      color: rgba(255,255,255,0.8); max-width: 600px; margin-bottom: 2rem;
+    }
+    .launch-date {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem;
+      font-weight: 700; color: var(--amber-light); margin-bottom: 3rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .launch-date::before { content: '📅'; }
+    .coming-soon-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: var(--amber); color: white; border: none;
+      padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 500; cursor: pointer;
+      border-radius: 2px; letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--earth); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent; color: rgba(255,255,255,0.8);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 500; cursor: pointer;
+      border-radius: 2px; letter-spacing: 0.02em;
+      transition: all 0.2s; text-decoration: none; display: inline-block;
+    }
+    .btn-secondary:hover { border-color: white; color: white; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); padding: 2.5rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.1rem; color: var(--amber); }
+    .footer-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.25rem; letter-spacing: 0.04em; }
+    .footer-links { display: flex; gap: 1.75rem; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-location { font-size: 0.75rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .coming-soon-section { padding: 3rem 1.5rem; }
+      .coming-soon-icon { width: 100px; height: 100px; font-size: 2.5rem; }
+      .coming-soon-title { font-size: clamp(2rem, 8vw, 3rem); }
+      .coming-soon-subtitle { font-size: 1rem; }
+      .launch-date { font-size: 1.2rem; }
+      .coming-soon-actions { flex-direction: column; align-items: center; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      nav { padding: 0.9rem 1rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Csébé<span> · Érettségire Fel!</span></div>
+  <div class="nav-links">
+    <a href="index.html">Vissza a főoldalra</a>
+    <a href="#" class="nav-cta">Csatlakozz</a>
+  </div>
+</nav>
+
+<!-- COMING SOON -->
+<section class="coming-soon-section">
+  <div class="coming-soon-icon">
+    <i class="ti ti-device-mobile" aria-hidden="true"></i>
+  </div>
+  <h1 class="coming-soon-title">Az alkalmazás<br>hamarosan érkezik!</h1>
+  <p class="coming-soon-subtitle">Dolgozunk azon, hogy a legjobb tanulási élményt nyújtsuk neked. Az első verzió már majdnem kész — hamarosan elérhető lesz mindenki számára.</p>
+  <div class="launch-date">Tervezett indulás: 2026. május 20.</div>
+  <div class="coming-soon-actions">
+    <a href="index.html" class="btn-primary">Vissza a főoldalra →</a>
+    <a href="what-is-it.html" target="_blank" class="btn-secondary">Tudj meg többet az appról</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Csébé · Érettségire Fel!</div>
+    <div class="footer-tagline">Ingyenes érettségi-felkészítő a csíkszeredai roma közösség számára</div>
+  </div>
+  <div>
+    <div class="footer-links">
+      <a href="index.html">Nézetmegtekintés</a>
+      <a href="#">Adatvédelem</a>
+      <a href="#">Kapcsolat</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+  <div style="text-align:right;">
+    <div class="footer-location">Csíkszereda · Miercurea Ciuc</div>
+    <div class="footer-location" style="margin-top:0.25rem;">Erdély · Románia</div>
+  </div>
+</footer>
+
+</body>
+</html>
